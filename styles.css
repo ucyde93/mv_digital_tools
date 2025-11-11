@@ -1,0 +1,106 @@
+/* Set base font */
+body {
+  font-family: 'Sora', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a; /* slate-900 */
+}
+::-webkit-scrollbar-thumb {
+  background: #4f46e5; /* indigo-600 */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1; /* indigo-500 */
+}
+
+
+/* Sourced from https://alvarotrigo.com/blog/animated-backgrounds-css/ */
+.background-aurora {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.aurora__item {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: overlay;
+  opacity: 0.1; /* Made slightly more subtle */
+  filter: blur(90px); /* Increased blur */
+  animation: aurora-animation 8s infinite alternate;
+}
+
+.aurora__item:nth-of-type(1) {
+  width: 700px;
+  height: 700px;
+  background-color: #a855f7; /* purple-500 */
+  top: -200px;
+  left: -200px;
+  animation-duration: 6s;
+}
+
+.aurora__item:nth-of-type(2) {
+  width: 600px;
+  height: 600px;
+  background-color: #818cf8; /* indigo-400 */
+  top: -100px;
+  right: -150px;
+  animation-duration: 7s;
+}
+
+.aurora__item:nth-of-type(3) {
+  width: 800px;
+  height: 800px;
+  background-color: #4f46e5; /* indigo-600 */
+  bottom: -300px;
+  left: -250px;
+  animation-duration: 9s;
+}
+
+.aurora__item:nth-of-type(4) {
+  width: 500px;
+  height: 500px;
+  background-color: #d946ef; /* fuchsia-500 */
+  bottom: -150px;
+  right: -100px;
+  animation-duration: 5s;
+}
+
+@keyframes aurora-animation {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.3) translate(80px, -80px);
+  }
+}
+
+/* Animation for content fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.fade-in-delay-1 { animation-delay: 0.1s; opacity: 0; }
+.fade-in-delay-2 { animation-delay: 0.2s; opacity: 0; }
+.fade-in-delay-3 { animation-delay: 0.3s; opacity: 0; }
+.fade-in-delay-4 { animation-delay: 0.4s; opacity: 0; }
